@@ -4,7 +4,7 @@ import React from 'react';
 export default function RecipeCard({ recipe, onOpen, onToggleFavorite, isFavorite }) {
   /** Recipe summary card with image, title, rating, time, tags, and favorite button. */
   return (
-    <article className="card" aria-label={recipe.title}>
+    <article className="card inner-highlight" aria-label={recipe.title}>
       <button
         className="card-thumb"
         onClick={() => onOpen(recipe)}

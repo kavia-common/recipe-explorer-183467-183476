@@ -4,7 +4,7 @@ import React from 'react';
 export default function SearchBar({ query, onChangeQuery, view, onChangeView }) {
   /** Search input and view toggle (grid/list). */
   return (
-    <div className="searchbar" role="search">
+    <div className="searchbar inner-highlight" role="search">
       <div className="search-input" style={{flex: 1}}>
         <span aria-hidden>🔎</span>
         <input

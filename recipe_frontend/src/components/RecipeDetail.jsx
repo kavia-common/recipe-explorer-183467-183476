@@ -13,7 +13,7 @@ export default function RecipeDetail({ recipe, onClose }) {
 
   return (
     <div className="modal-backdrop" role="dialog" aria-modal="true" aria-label={`${recipe.title} details`} onClick={onClose}>
-      <div className="modal" onClick={(e) => e.stopPropagation()}>
+      <div className="modal inner-highlight" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
           <div style={{display: 'flex', alignItems: 'center', gap: 10}}>
             <strong>{recipe.title}</strong>

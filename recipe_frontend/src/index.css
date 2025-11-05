@@ -11,3 +11,10 @@ body {
 /* Optional: utility class reserved for sign-in sandbox; actual isolation handled inline in component */
 .figma-sandbox { isolation: isolate; }
 code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+/* Keyboard focus ring alignment with theme */
+:focus-visible {
+  outline: none;
+  box-shadow: var(--glass-ring);
+  border-radius: 12px;
+}

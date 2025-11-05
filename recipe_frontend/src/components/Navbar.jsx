@@ -10,6 +10,15 @@ export default function Navbar({ onToggleTheme, isDark = false, favoritesCount =
 
   const innerClass = 'container navbar-inner';
 
+  // Mouse position CSS vars for shine on primary button
+  const onBtnMove = (e) => {
+    const t = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - t.left;
+    const y = e.clientY - t.top;
+    e.currentTarget.style.setProperty('--mx', `${x}px`);
+    e.currentTarget.style.setProperty('--my', `${y}px`);
+  };
+
   return (
     <nav className="navbar" role="navigation" aria-label="Top Navigation">
       <div className={innerClass}>
@@ -31,7 +40,7 @@ export default function Navbar({ onToggleTheme, isDark = false, favoritesCount =
             <span role="img" aria-label="heart">❤️</span>
           </button>
           <span className="badge" aria-live="polite">{favoritesCount} saved</span>
-          <button onClick={onToggleTheme} className="primary-btn" aria-label="Toggle Theme">
+          <button onMouseMove={onBtnMove} onClick={onToggleTheme} className="primary-btn" aria-label="Toggle Theme">
             {isDark ? '☀️ Light' : '🌙 Dark'}
           </button>
         </div>
