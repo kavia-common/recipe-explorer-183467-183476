@@ -2,11 +2,11 @@ import React from 'react';
 
 // PUBLIC_INTERFACE
 export default function Navbar({ onToggleTheme, isDark = false, favoritesCount = 0 }) {
-  /** Top navigation bar with branding, favorites indicator, and theme toggle. */
+  /** Top navigation bar with branding, favorites indicator, theme toggle, and Sign In link. */
   return (
     <nav className="navbar" role="navigation" aria-label="Top Navigation">
       <div className="container navbar-inner">
-        <div className="brand" aria-label="Recipe Explorer">
+        <a className="brand" aria-label="Recipe Explorer" href="/">
           <div className="brand-badge" aria-hidden>🍳</div>
           <div>
             <div style={{display: 'flex', alignItems: 'center', gap: 8}}>
@@ -15,8 +15,11 @@ export default function Navbar({ onToggleTheme, isDark = false, favoritesCount =
             </div>
             <div style={{fontSize: 11, color: 'var(--color-muted)'}}>Discover. Cook. Enjoy.</div>
           </div>
-        </div>
+        </a>
         <div className="nav-actions">
+          <a href="/sign-in" className="icon-btn" aria-label="Sign In">
+            🔐
+          </a>
           <button className="icon-btn" aria-label="Favorites">
             <span role="img" aria-label="heart">❤️</span>
           </button>

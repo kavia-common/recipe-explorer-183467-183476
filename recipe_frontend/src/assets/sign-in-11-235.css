@@ -1,0 +1,435 @@
+/* NOTE:
+   Global tokens are provided by /assets/common.css via a <link> tag injected by index.js
+   and included in public/index.html. Do not add @import here to avoid CRA path restrictions.
+
+   The rules below are copied from assets/sign-in-11-235.css to preserve pixel-perfect layout.
+*/
+#screen-sign-in-11-235 {
+  position: relative;
+  width: 375px;
+  height: 812px;
+  background-color: var(--color-ffffff); /* screen background */
+  overflow: hidden;
+  /* Root style_ref: style_10 → background white, border_radius: 30 */
+  border-radius: 30px;
+}
+
+/* Utility for grouping */
+.group, .component, .frame { position: absolute; }
+
+/* Titttle group 13:110 */
+#grp-13-110 {
+  left: 30px; /* 456 - 426 */
+  top: 94px;  /* -336 - (-430) */
+  width: 155px;
+  height: 75px;
+}
+#txt-12-29 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 84px; height: 45px;
+  margin: 0;
+  font-family: var(--typo-60-family);
+  font-size: var(--typo-60-size);
+  font-weight: var(--typo-60-weight);
+  line-height: var(--typo-60-line-height);
+  letter-spacing: var(--typo-60-letter-spacing);
+  color: var(--typo-60-color);
+}
+#txt-12-30 {
+  position: absolute;
+  left: 0px;
+  top: 45px; /*  -291 - (-336) */
+  width: 155px; height: 30px;
+  margin: 0;
+  font-family: var(--typo-61-family);
+  font-size: var(--typo-61-size);
+  font-weight: var(--typo-61-weight);
+  line-height: var(--typo-61-line-height);
+  letter-spacing: var(--typo-61-letter-spacing);
+  color: var(--typo-61-color);
+}
+
+/* Forgot Password group 12:91 */
+#grp-12-91 {
+  left: 40px; /* 466-426 */
+  top: 438px; /* 8 - (-430) */
+  width: 97px; height: 17px;
+}
+#txt-12-94 {
+  position: absolute;
+  left: 0; top: 0;
+  width: 97px; height: 17px;
+  font-family: var(--typo-62-family);
+  font-size: var(--typo-62-size);
+  font-weight: var(--typo-62-weight);
+  line-height: var(--typo-62-line-height);
+  letter-spacing: var(--typo-62-letter-spacing);
+  color: var(--typo-62-color);
+  text-decoration: none;
+  background: transparent;
+}
+
+/* Button Google group 13:35 */
+#btn-13-35 {
+  left: 131px; /* 557-426 */
+  top: 597px;  /* 167 - (-430) */
+  width: 44px; height: 44px;
+}
+#rect-13-36 {
+  position: absolute;
+  left: 0; top: 0;
+  width: 44px; height: 44px;
+  object-fit: cover;
+  background-color: var(--color-ffffff);
+  border-radius: 10px; /* style_126 border_radius:10 + shadow_? -> style_126 has shadows: shadow_0 */
+  box-shadow: var(--shadow-0);
+}
+#cmp-13-48 {
+  position: absolute;
+  left: 10px; /* 567-557 */
+  top: 10px;  /* 177-167 */
+  width: 24px; height: 24px;
+}
+#ico-13-39 {
+  position: absolute;
+  left: 2px;  /* 569-567 */
+  top: 2px;   /* 179-177 */
+  width: 20px; height: 20px;
+}
+#ico-13-40 {
+  position: absolute;
+  left: 3.1530151367px; /* 570.1530 - 567 */
+  top: 2px; /* 179 - 177 */
+  width: 15.6559991837px;
+  height: 7.7550010681px;
+  background: var(--color-ff3d00); /* style_22 */
+}
+#ico-13-41 {
+  position: absolute;
+  left: 3.0974731445px; /* 570.0975 - 567 */
+  top: 14.0270080566px; /* 191.0270 - 177 */
+  width: 15.6070022583px;
+  height: 7.9729981422px;
+  background: var(--color-4caf50); /* style_23 */
+}
+#ico-13-42 {
+  position: absolute;
+  left: 12px; /* 579-567 */
+  top: 10px;  /* 187-177 */
+  width: 10px; height: 9.4141206741px;
+}
+
+/* Button Facebook group 13:49 */
+#btn-13-49 {
+  left: 200px; /* 626-426 */
+  top: 597px;  /* 167 - (-430) */
+  width: 44px; height: 44px;
+}
+#rect-13-50 {
+  position: absolute;
+  left: 0; top: 0;
+  width: 44px; height: 44px;
+  background: var(--color-ffffff);
+  border-radius: 10px;
+  box-shadow: var(--shadow-0);
+}
+#grp-13-58 {
+  position: absolute;
+  left: 10px; top: 10px;
+  width: 24px; height: 24px;
+}
+#grp-13-59 {
+  position: absolute;
+  left: 0; top: 0;
+  width: 24px; height: 24px;
+}
+#ico-13-60 {
+  position: absolute;
+  left: 0; top: 0;
+  width: 24px; height: 24px;
+  background: transparent;
+  opacity: 0.58; /* style_25 opacity */
+}
+#ico-13-61 {
+  position: absolute;
+  left: 2px; top: 2px; /* 638-636, 179-177 */
+  width: 20px; height: 20px;
+}
+#ico-13-62 {
+  position: absolute;
+  left: 0; top: 0;
+  width: 24px; height: 24px;
+  opacity: 0; /* style_27 opacity 0 */
+}
+
+/* CTA text Don’t have an account? */
+#txt-13-67 {
+  position: absolute;
+  left: 99px;  /* 525 - 426 */
+  top: 696px;  /* 266 - (-430) */
+  width: 177px; height: 17px;
+  margin: 0;
+  font-family: var(--typo-63-family);
+  font-size: var(--typo-63-size);
+  font-weight: var(--typo-63-weight);
+  line-height: var(--typo-63-line-height);
+  color: var(--typo-63-color);
+}
+
+/* Or line group */
+#grp-12-139 {
+  position: absolute;
+  left: 90px;  /* 516-426 */
+  top: 560px;  /* 130 - (-430) */
+  width: 195px; height: 17px;
+}
+#line-12-141 {
+  position: absolute;
+  left: 145px; /* 661 - 516 */
+  top: 9px;    /* 139 - 130 */
+  width: 50px; height: 1px;
+  background: var(--color-d9d9d9); /* style_28: bg & border color d9d9d9, height set to 1px */
+}
+#line-12-140 {
+  position: absolute;
+  left: 0px;
+  top: 9px;
+  width: 50px; height: 1px;
+  background: var(--color-d9d9d9);
+}
+#txt-12-142 {
+  position: absolute;
+  left: 57px; /* 573-516 */
+  top: 0px;
+  width: 81px; height: 17px;
+  margin: 0;
+  font-family: var(--typo-64-family);
+  font-size: var(--typo-64-size);
+  font-weight: var(--typo-64-weight);
+  line-height: var(--typo-64-line-height);
+  color: var(--typo-64-color);
+}
+
+/* Input field Email (component instance) */
+#cmp-30-585 {
+  left: 30px; /* 456-426 */
+  top: 226px; /* -204 - (-430) */
+  width: 315px; height: 81px;
+}
+#rect-I30-585-30-298 {
+  position: absolute;
+  left: 0px; /* 456-456 */
+  top: 26px; /* -178 - (-204) */
+  width: 315px; height: 55px;
+  background: transparent;
+  border: 1.5px solid var(--color-d9d9d9);
+  border-radius: 10px;
+}
+#lbl-I30-585-30-301 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 38px; height: 21px;
+  font-family: var(--typo-66-family);
+  font-size: var(--typo-66-size);
+  font-weight: var(--typo-66-weight);
+  line-height: var(--typo-66-line-height);
+  color: var(--typo-66-color);
+}
+#cmp-30-585 input#input-email {
+  position: absolute;
+  left: 20px; /* 476-456 */
+  top: 45px;  /* -159 - (-204) */
+  width: 275px; height: 17px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--typo-65-family);
+  font-size: var(--typo-65-size);
+  font-weight: var(--typo-65-weight);
+  line-height: var(--typo-65-line-height);
+  color: var(--typo-65-color);
+}
+#ph-I30-585-30-300 { display: none; }
+
+/* Input field Password */
+#cmp-30-590 {
+  left: 30px; /* 456-426 */
+  top: 337px; /* -93 - (-430) */
+  width: 315px; height: 81px;
+}
+#rect-I30-590-30-298 {
+  position: absolute;
+  left: 0px;
+  top: 26px; /* -67 - (-93) */
+  width: 315px; height: 55px;
+  background: transparent;
+  border: 1.5px solid var(--color-d9d9d9);
+  border-radius: 10px;
+}
+#lbl-I30-590-30-301 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 107px; height: 21px;
+  font-family: var(--typo-66-family);
+  font-size: var(--typo-66-size);
+  font-weight: var(--typo-66-weight);
+  line-height: var(--typo-66-line-height);
+  color: var(--typo-66-color);
+}
+#cmp-30-590 input#input-password {
+  position: absolute;
+  left: 20px; /* 476-456 */
+  top: 45px;  /* -48 - (-93) */
+  width: 275px; height: 17px;
+  border: none; outline: none; background: transparent;
+  font-family: var(--typo-65-family);
+  font-size: var(--typo-65-size);
+  font-weight: var(--typo-65-weight);
+  line-height: var(--typo-65-line-height);
+  color: var(--typo-65-color);
+}
+#ph-I30-590-30-300 { display: none; }
+
+/* Big Button Sign In - instance */
+#btn-54-668 {
+  position: absolute;
+  left: 30px; /* 456-426 */
+  top: 480px; /* 50 - (-430) */
+  width: 315px; height: 60px;
+  display: flex;
+  flex-direction: row; /* layout horizontal */
+  align-items: center;
+  justify-content: center;
+  gap: 11px; /* computed from coordinates: icon 666 - (label 541 + 114) = 11 */
+  background: var(--color-129575); /* style_11 */
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+#txt-I54-668-53-624 {
+  display: block;
+  font-family: var(--typo-58-family);
+  font-size: var(--typo-58-size);
+  font-weight: var(--typo-58-weight);
+  line-height: var(--typo-58-line-height);
+  color: var(--typo-58-color);
+}
+#cmp-I54-668-53-625 {
+  position: relative;
+  width: 20px; height: 20px;
+}
+#rect-I54-668-53-625-139-3256 {
+  position: absolute;
+  left: 0; top: 0; width: 20px; height: 20px;
+  background: transparent; /* style_12 opacity 0 background */
+}
+#bool-I54-668-53-625-139-3257 {
+  position: absolute;
+  left: 3.333313px; top: 4.166519px;
+  width: 13.333197px; height: 11.666668px;
+}
+#bool-I54-668-53-625-139-3257 #stroke-1 {
+  position: absolute;
+  left: 0; top: 5.187601px; /* approximate from 79.3541 - 74.1665 within local */
+  width: 13.333175px; height: 1.291609px;
+  background: var(--color-000000);
+}
+#bool-I54-668-53-625-139-3257 #stroke-3 {
+  position: absolute;
+  left: 7.232239px; top: 0px;
+  width: 6.100938px; height: 11.666668px;
+  background: var(--color-000000);
+}
+
+/* Status Bar */
+#cmp-13-71 {
+  left: 0px; /* 426-426 */
+  top: 0px;  /* -430 - (-430) */
+  width: 375px; height: 44px;
+}
+#cmp-13-71 #symbols {
+  position: absolute;
+  left: 293.5px; /* 719.5-426 */
+  top: 16.6px;   /* -413.4 - (-430) */
+  width: 68px; height: 13px;
+}
+#cmp-13-71 #battery {
+  position: absolute;
+  left: 336px; /* 762 - 426 */
+  top: 17.16px; /* -412.84 - (-430) */
+  width: 24.5px; height: 11.5px;
+}
+#battery-rect { position: absolute; left: 0; top: 0; width: 24.5px; height: 11.5px; }
+#batt-306 {
+  position: absolute;
+  left: 1px; top: 1px; width: 20px; height: 9.5px;
+}
+#batt-307 {
+  position: absolute;
+  left: 0px; top: 0px; width: 22px; height: 11.5px;
+}
+#battery-inner {
+  position: absolute;
+  left: 338px; /* 764 - 426 */
+  top: 19.077px; /* -410.9233 - (-430) */
+  width: 18px; height: 7.666667px;
+  border-radius: 1.6px; /* style_34 border_radius */
+  background: var(--color-303030);
+}
+#cell {
+  position: absolute;
+  left: 293.5px; /* 719.5-426 */
+  top: 17.6px;   /* -412.4 - (-430) */
+  width: 17.099991px; height: 10.700005px;
+}
+#cell-311, #cell-312, #cell-313, #cell-314 {
+  position: absolute;
+}
+#cell-311 { left: 0px; top: 24.300018px; width: 3px; height: 4px; display:none; } /* not visible baseline; kept for hierarchy */
+#cell-312 { left: 298.3px; top: 22.300018px; width: 3px; height: 6px; display:none; }
+#cell-313 { left: 302.9px; top: 20px; width: 3px; height: 8.3px; display:none; }
+#cell-314 { left: 307.6px; top: 17.6px; width: 3px; height: 10.7px; display:none; }
+
+#wifi {
+  position: absolute;
+  left: 315.6px; /* 741.6-426 */
+  top: 17.4px; /* -412.6 - (-430) */
+  width: 15.4px; height: 11.05721px;
+  /* purely decorative; stroke in black */
+}
+
+#time {
+  position: absolute;
+  left: 0px; top: 12px; width: 180px; height: 22px;
+}
+#time-text {
+  position: absolute;
+  left: 29.5px; /* 455.5 - 426 */
+  top: 14px;    /* -416 - (-430) */
+  font-family: var(--typo-67-family);
+  font-size: var(--typo-67-size);
+  font-weight: var(--typo-67-weight);
+  line-height: var(--typo-67-line-height);
+  letter-spacing: var(--typo-67-letter-spacing);
+  color: var(--typo-67-color);
+}
+
+/* Home Indicator component 42:614 */
+#cmp-42-614 {
+  position: absolute;
+  left: 0px;  /* 426 - 426 */
+  top: 778px; /* 348 - (-430) */
+  width: 375px; height: 34px;
+}
+#home-line {
+  position: absolute;
+  left: 120px; /* 546 - 426 */
+  top: 21px;   /* 369 - 348 */
+  width: 135px; height: 5px;
+  background: var(--color-121212); /* style_32 background + radius 100 */
+  border-radius: 100px;
+}
