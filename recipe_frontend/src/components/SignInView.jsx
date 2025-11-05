@@ -3,16 +3,17 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 /**
  * PUBLIC_INTERFACE
  * SignInView renders the Figma-extracted Sign In screen with pixel-perfect fidelity.
- * Implementation notes:
- * - Exact HTML structure and IDs/classes are preserved.
- * - A local "sandbox" wrapper resets inherited styles to prevent reflow differences.
- * - The Figma JS (assets/sign-in-11-235.js) is appended so behaviors execute on mount.
- * - Images are referenced with /assets/figmaimages/... and are expected to resolve from public.
- * - Global common.css is injected by index.js; we import the screen CSS to ensure correct specificity.
- * - A dev-only overlay toggle renders screen_11-235.png at 50% opacity for quick visual comparisons.
+ * Loading and isolation strategy:
+ * 1) Base tokens/reset: /assets/common.css are linked in public/index.html (and defensively injected in index.js).
+ * 2) Screen CSS: /assets/sign-in-11-235.css is linked in public/index.html only for /sign-in before first paint and also injected on client transitions.
+ * 3) Hard isolation: #signin-sandbox at Router level uses all: initial; we re-apply only needed font to the subtree.
+ * 4) Structure: Markup mirrors assets/sign-in-11-235.html exactly; no additional wrappers inside the screen canvas.
+ * 5) Script: /assets/sign-in-11-235.js is executed on mount to ensure focus/interaction parity; removed on unmount.
+ * 6) QA: Dev-only overlay toggle to compare with /assets/screen_11-235.png.
  */
 
-/* screen-specific CSS, loads after app styles and uses strong ID selectors for specificity */
+/* Importing the CSS copy ensures CRA bundling order does not override the external link when hot reloading.
+   Specificity relies on ID selectors so conflicts are minimal. */
 import '../assets/sign-in-11-235.css';
 
 export default function SignInView() {
@@ -25,7 +26,7 @@ export default function SignInView() {
   }, []);
 
   useEffect(() => {
-    // Ensure common tokens are available (defensive; index.js already injects)
+    // Defensive: ensure tokens exist if user navigated client-side
     const link = document.querySelector('link[data-common-css="true"]');
     if (!link) {
       const l = document.createElement('link');
@@ -54,22 +55,23 @@ export default function SignInView() {
     };
   }, []);
 
-  // CSS isolation wrapper styles. Avoid margins/padding that could shift absolute children.
-  const sandboxStyle = {
+  // The sandbox for the screen canvas is created at the Router level with #signin-sandbox (all: initial).
+  // Here we keep the inner wrapper free of any margins/paddings to preserve absolute positioning.
+  const sandboxInnerStyle = {
     fontFamily: "'Poppins', 'SF Pro Display', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
     lineHeight: 'normal',
     fontSize: 'initial',
     background: 'transparent',
     display: 'grid',
     placeContent: 'center',
-    minHeight: 'calc(100vh - 64px)', // leave room for navbar height without altering inner screen offsets
-    padding: 0, // zero to avoid affecting centering - full-bleed within viewport center
+    minHeight: '100vh',
+    padding: 0,
   };
 
   return (
     <div style={{ position: 'relative' }}>
       {isDev && (
-        <div style={{ position: 'fixed', top: 80, right: 12, zIndex: 60 }}>
+        <div style={{ position: 'fixed', top: 20, right: 12, zIndex: 60 }}>
           <button
             type="button"
             onClick={() => setOverlay(v => !v)}
@@ -107,7 +109,7 @@ export default function SignInView() {
 
       <div
         className="figma-sandbox"
-        style={sandboxStyle}
+        style={sandboxInnerStyle}
         ref={containerRef}
       >
         {/* Exact, static JSX mirroring sign-in-11-235.html body content */}

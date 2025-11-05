@@ -1,18 +1,27 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-screen="">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Recipe Explorer - Ocean Professional"
-    />
     <title>Recipe Explorer</title>
-    <!-- PUBLIC_INTERFACE: Figma global tokens/reset for pixel-perfect screens -->
-    <!-- Note: JS also injects this link at runtime; keeping it here ensures SSR/early paint parity. -->
-    <link rel="stylesheet" href="%PUBLIC_URL%/assets/common.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Inject global Figma tokens first to set variables and resets -->
+    <link rel="stylesheet" href="/assets/common.css" data-common-css="true" />
+    <!-- Screen CSS: loaded via script gate to only apply on /sign-in before first paint -->
+    <script>
+      (function(){
+        try {
+          var path = (window && window.location && window.location.pathname) || '/';
+          if (path === '/sign-in') {
+            document.documentElement.setAttribute('data-screen', 'sign-in-11-235');
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = '/assets/sign-in-11-235.css';
+            link.id = 'link-signin-css';
+            document.head.appendChild(link);
+          }
+        } catch(e) {}
+      })();
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

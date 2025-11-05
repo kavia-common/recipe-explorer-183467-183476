@@ -42,19 +42,55 @@ function injectSignInCss() {
   }
 }
 
+function injectSignInScript() {
+  /** Attach the Figma behavior script for the sign-in screen after mount. */
+  if (typeof document === 'undefined') return;
+  const path = window.location.pathname;
+  const id = 'script-signin';
+  const existing = document.getElementById(id);
+  if (path === '/sign-in') {
+    if (!existing) {
+      const s = document.createElement('script');
+      s.id = id;
+      s.src = '/assets/sign-in-11-235.js';
+      s.async = true;
+      document.body.appendChild(s);
+    }
+  } else if (existing) {
+    existing.remove();
+  }
+}
+
 // A tiny router to switch between home and sign-in without adding new deps
 function Router() {
   useEffect(() => {
+    // index.html already loaded common.css and conditionally the screen CSS.
+    // The following calls are defensive in case of client-side transitions.
     injectGlobalCommonCss();
     injectSignInCss();
+    injectSignInScript();
   });
 
   const path = typeof window !== 'undefined' ? window.location.pathname : '/';
   if (path === '/sign-in') {
-    // Wrap page with full-bleed container that won't enforce app padding/margins
+    // Hard isolation container to reset all inherited styles and center canvas
     return (
-      <div style={{minHeight: '100vh', background: 'transparent'}}>
-        <SignInPage />
+      <div
+        id="signin-sandbox"
+        style={{
+          all: 'initial',
+          display: 'grid',
+          placeContent: 'center',
+          minHeight: '100vh',
+          background: 'transparent',
+          WebkitFontSmoothing: 'antialiased',
+          MozOsxFontSmoothing: 'grayscale'
+        }}
+      >
+        {/* Re-establish font family for the subtree after all: initial */}
+        <div style={{fontFamily: "'Poppins','SF Pro Display', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif"}}>
+          <SignInPage />
+        </div>
       </div>
     );
   }

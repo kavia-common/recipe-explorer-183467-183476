@@ -1,5 +1,6 @@
 @import './theme.css';
 
+/* Keep global utilities, but they won't affect #signin-sandbox due to all: initial; */
 * { box-sizing: border-box; }
 html, body, #root { height: 100%; }
 body {
